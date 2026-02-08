@@ -5,7 +5,7 @@ import numpy as np
 import os
 
 # This is the exact, unchangeable path to your model
-model_path = r'C:\Users\dell\Desktop\data\models\rabbit_detector.h5'
+model_path = 'models/rabbit_detector.h5'
 
 if not os.path.exists(model_path):
     st.error(f"❌ STOP: The file is NOT at {model_path}")
@@ -41,4 +41,5 @@ if uploaded_file is not None:
     if score > 0.5:
         st.success(f"It's a RABBIT! ({score:.2%})")
     else:
+
         st.info(f"Not a rabbit. ({1-score:.2%})")
